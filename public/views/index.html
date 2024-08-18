@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/main.css">
+    <title>NLP News Evaluation</title>
+</head>
+<body>
+    <header>
+        <h1>NLP News Article Evaluation</h1>
+    </header>
+    <main>
+        <form id="form">
+            <label for="url">Enter URL of the news article:</label>
+            <input type="text" id="url" name="url" required>
+            <button type="submit">Evaluate</button>
+        </form>
+        <section id="results"></section>
+    </main>
+    <footer>
+        <p>&copy; 2024 NLP News Evaluation</p>
+    </footer>
+    <script type="module" src="../js/apiHandler.js"></script> 
+    <script type="module" src="../js/formValidator.js"></script> 
+    <script type="module" src="../js/index.js"></script>    
+</body>
+</html>
