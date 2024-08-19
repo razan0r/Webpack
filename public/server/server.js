@@ -3,8 +3,9 @@ const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 const path = require('path');
 
-dotenv.config();
-const apiKey = process.env.API_KEY || '1023702f36e1416c9815cc60668f1155&units=imperial';
+dotenv.config(); 
+
+const apiKey = process.env.API_KEY; 
 
 const app = express();
 
@@ -18,7 +19,7 @@ app.get('/', (req, res) => {
 
 app.post('/api', async (req, res) => {
     const articleUrl = req.body.url;
-    const apiUrl = `https://api.example.com/analyze?key=${apiKey}&url=${articleUrl}`;
+    const apiUrl = `https://api.meaningcloud.com/sentiment-2.1?key=${apiKey}&url=${articleUrl}&lang=en`;
 
     try {
         const fetch = (await import('node-fetch')).default;
@@ -33,4 +34,3 @@ app.post('/api', async (req, res) => {
 app.listen(8081, () => {
     console.log('Server is running on http://localhost:8081');
 });
-
