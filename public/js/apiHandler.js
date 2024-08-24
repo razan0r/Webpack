@@ -23,11 +23,9 @@ export const handleSubmit = async (event) => {
 
         const data = await response.json();
 
-        // Clear previous results
         const resultsSection = document.getElementById('results');
         resultsSection.innerHTML = '';
 
-        // Display new results
         resultsSection.innerHTML = `
             <p>Polarity: ${data.polarity}</p>
             <p>Subjectivity: ${data.subjectivity}</p>
@@ -39,8 +37,9 @@ export const handleSubmit = async (event) => {
     }
 };
 
+
 export const validateUrl = (url) => {
-    // Improved regex pattern to handle more cases
-    const regex = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/i;
+  
+    const regex = /^(https?:\/\/)([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/i;
     return regex.test(url);
 };
